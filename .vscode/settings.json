@@ -1,0 +1,18 @@
+{
+	"editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace",
+	"editor.renderWhitespace": "all",
+	"editor.codeLens": true,
+	"editor.fontSize": 13,
+	"prettier.tabWidth": 4,
+	"files.insertFinalNewline": true,
+	"editor.defaultFormatter": "ms-vscode.cpptools",
+	"editor.formatOnSave": true,
+	"C_Cpp.default.cStandard": "gnu89",
+	"editor.tabSize": 8,
+	"files.associations": {
+		"*.py": "python",
+		"string.h": "c"
+	},
+	"editor.insertSpaces": false,
+	"git.confirmSync": false
+}
