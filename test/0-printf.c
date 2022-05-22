@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 
 			if (ch2 == '%')
 			{
-				_putchar(ch2);
+				_putchar('%');
 				i++;
 				continue;
 			}
