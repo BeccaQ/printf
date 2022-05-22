@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	va_list next;
 
 	va_start(next, format);
+	count = 0;
 
 	if (format == NULL)
 		return (-1);
