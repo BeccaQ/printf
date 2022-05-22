@@ -3,7 +3,12 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 int _printf(const char *format, ...);
+int _putchar(char c);
+void print_number(int n);
+void _puts(char *str);
+extern int count;
 
-#endif
+#endif /* MAIN_H */
