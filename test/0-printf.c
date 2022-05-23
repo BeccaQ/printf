@@ -12,7 +12,9 @@ int _printf(const char *format, ...)
 	va_list next;
 
 	count = 0;
-	if (format == NULL)
+	if (!format || (format[0] == '%' && !(format[1])))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 	va_start(next, format);
 	for (i = 0; format[i] != '\0'; i++)
@@ -39,8 +41,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				i++;
 				continue;
-			} else if (!isalpha(format[i + 1]))
-				return (-1);
+			}
 		}
 		_putchar(format[i]);
 	}
