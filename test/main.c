@@ -1,5 +1,3 @@
-#include <limits.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -14,7 +12,7 @@ int main(void)
 	unsigned int ui;
 	void *addr;
 
-	len = _printf("Let's try to printf a simple sentence.\n");
+	len = _printf(NULL);
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
@@ -32,14 +30,14 @@ int main(void)
 	printf("Character:[%c]\n", 'H');
 	_printf("String:[%s]\n", "I am a string !");
 	printf("String:[%s]\n", "I am a string !");
-	/* _printf("Address:[%p]\n", addr);
-	printf("Address:[%p]\n", addr); */
+	_printf("Address:[%p]\n", addr);
+	printf("Address:[%p]\n", addr);
 	len = _printf("Percent:[%%]\n");
 	len2 = printf("Percent:[%%]\n");
-	/* _printf("Len:[%d]\n", len);
+	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%r]\n");
-	printf("Unknown:[%r]\n"); */
+	printf("Unknown:[%r]\n");
 
 	printf("\n\n**************************\n\n_printf returns %d\nprintf returns %d\n", len, len2);
 	return (0);
