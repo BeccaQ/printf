@@ -12,10 +12,10 @@ int _printf(const char *format, ...)
 	char ch, ch2;
 	va_list next;
 
-	va_start(next, format);
 	count = 0;
 	if (format == NULL)
 		return (-1);
+	va_start(next, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		ch = format[i];

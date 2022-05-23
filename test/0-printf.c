@@ -12,17 +12,14 @@ int _printf(const char *format, ...)
 	char ch, ch2;
 	va_list next;
 
-	va_start(next, format);
 	count = 0;
-
 	if (format == NULL)
 		return (-1);
-
+	va_start(next, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		ch = format[i];
 		ch2 = format[i + 1];
-
 		if (ch == '%')
 		{
 			if ((ch2 == 'd' || ch2 == 'i'))
@@ -30,34 +27,25 @@ int _printf(const char *format, ...)
 				print_number(va_arg(next, int));
 				i++;
 				continue;
-			}
-
-			if (ch2 == 'c')
+			} else if (ch2 == 'c')
 			{
 				_putchar(va_arg(next, int));
 				i++;
 				continue;
-			}
-
-			if (ch2 == 's')
+			} else if (ch2 == 's')
 			{
 				_puts(va_arg(next, char *));
 				i++;
 				continue;
-			}
-
-			if (ch2 == '%')
+			} else if (ch2 == '%')
 			{
 				_putchar('%');
 				i++;
 				continue;
 			}
 		}
-
 		_putchar(ch);
 	}
-
 	va_end(next);
-
 	return (count);
 }
