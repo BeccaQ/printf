@@ -19,8 +19,6 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (!(format[i + 1]))
-				return (-1);
 			if ((format[i + 1] == 'd' || format[i + 1] == 'i'))
 			{
 				print_number(va_arg(next, int));
@@ -41,7 +39,8 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				i++;
 				continue;
-			}
+			} else if (!isalpha(format[i + 1]))
+				return (-1);
 		}
 		_putchar(format[i]);
 	}
